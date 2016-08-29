@@ -23,13 +23,19 @@ body {
   /*opacity: 0.75;*/
 }
 
-#shape-sternberg {
-  fill: #fff;
+
+
+svg .shape {
   opacity: 0;
   cursor: pointer;
   transition: 0.2s;
 }
 
-#shape-sternberg:hover {
-  opacity: 1;
+svg .shape:hover {
+  opacity: 0.35;
 }
+
+
+#sternberg { fill: #f00; }
+#fille { fill: #00f; }
+
