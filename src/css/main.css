@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+}
+
+
+
+.container {
+  position: relative; overflow: hidden;
+  width: 1000px;
+  margin: 48px auto;
+}
+
+.container img {
+  position: relative;
+  width: 100%;
+}
+
+.container svg {
+  position: absolute; left: 0; top: 0;
+  width: 100%; height: 100%;
+  /*width: 1000px; height: 100%;*/
+  /*background-color: #69f;*/
+  /*opacity: 0.75;*/
+}
+
+#shape-sternberg {
+  fill: #fff;
+  opacity: 0;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#shape-sternberg:hover {
+  opacity: 1;
+}
