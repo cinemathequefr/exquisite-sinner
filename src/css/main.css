@@ -21,11 +21,11 @@ body {
 svg .shape {
   opacity: 0;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 0.25s;
   fill: #bf7f30;
 }
 
-svg .shape:hover {
+svg .shape:hover, svg .shape.on {
   opacity: 0.65;
 }
 
