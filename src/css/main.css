@@ -29,6 +29,7 @@ svg .shape:hover, svg .shape.on {
   opacity: 0.65;
 }
 
+/*
 .infobox {
   opacity: 0;
   position: absolute;
@@ -36,6 +37,14 @@ svg .shape:hover, svg .shape.on {
   background-color: #e7e5d8;
   transition: 0.2s;
   box-sizing: border-box;
+}
+*/
+.infobox {
+  opacity: 0;
+  position: absolute;
+  top: 5%;  left: 5%; height: 35%; width: 60%;
+  border-radius: 12px;
+  background-color: #fff;
 }
 
 .infobox.visible {
@@ -45,4 +54,3 @@ svg .shape:hover, svg .shape.on {
 .infobox .content {
   margin: 1.5%;
 }
-
