@@ -45,6 +45,8 @@ svg .shape:hover, svg .shape.on {
   top: 5%;  left: 5%; height: 35%; width: 60%;
   border-radius: 12px;
   background-color: #fff;
+  -webkit-animation-duration: 1s !important;
+  animation-duration: 1s !important;
 }
 
 .infobox.visible {
