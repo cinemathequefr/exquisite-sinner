@@ -30,8 +30,11 @@
 
 
       $(".shape").on("click", function () {
-        // $(".infobox").addClass("visible animated slideInUp");
-        $(".infobox").addClass("visible animated rubberBand");
+        $(".infobox.visible").attr("class", "infobox");
+        window.setTimeout(function () {
+          $(".infobox").addClass("visible animated rubberBand");
+        }, 100)
+        
       });
 
 /*
