@@ -1,5 +1,7 @@
 body {
   margin: 0;
+  font-family: Source Sans Pro;
+  font-size: 1rem;
 }
 
 .container {
@@ -20,47 +22,28 @@ svg .shape {
   opacity: 0;
   cursor: pointer;
   transition: 0.2s;
-  /*fill: #f0f;*/
   fill: #bf7f30;
-
-
-
-  /*transform: translateY(-5px);*/
 }
 
 svg .shape:hover {
   opacity: 0.65;
 }
 
-
-
-/*
-.container {
-  position: relative; overflow: hidden;
-  width: 1000px;
-d  margin: 0;
-}
-
-.container img {
-  position: relative;
-  width: 100%;
-}
-
-.container svg {
-  position: absolute; left: 0; top: 0;
-  width: 100%; height: 100%;
-}
-
-
-svg .shape {
+.infobox {
   opacity: 0;
-  cursor: pointer;
+  position: absolute;
+  top: 0;  left: 0; height: 40%; right: 0;
+  background-color: #fff;
   transition: 0.2s;
-  fill: #f0f;
-  transform: translateY(-5px);
+  box-sizing: border-box;
+  box-shadow: 0 4px 4px 4px rgba(50, 50, 50, 0.75);
 }
 
-svg .shape:hover {
-  opacity: 0.35;
+.infobox.visible {
+  opacity: 1;
 }
-*/
+
+.infobox .content {
+  margin: 1.5%;
+}
+
