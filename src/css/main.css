@@ -3,10 +3,38 @@ body {
 }
 
 .container {
+  position: relative;
+  width: 100%;
+  margin: 0; padding: 0 0 78.35% 0;
+  background-image: url(../../img/exquisite-sinner-725x568.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container svg {
+  position: absolute;
+  left: 0; top: 0; bottom: 0; right: 0;
+}
+
+svg .shape {
+  opacity: 0;
+  cursor: pointer;
+  transition: 0.2s;
+  fill: #f0f;
+  /*transform: translateY(-5px);*/
+}
+
+svg .shape:hover {
+  opacity: 0.35;
+}
+
+
+
+/*
+.container {
   position: relative; overflow: hidden;
   width: 1000px;
-  /*margin: 48px auto;*/
-  margin: 0;
+d  margin: 0;
 }
 
 .container img {
@@ -31,4 +59,4 @@ svg .shape {
 svg .shape:hover {
   opacity: 0.35;
 }
-
+*/
