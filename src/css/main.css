@@ -2,12 +2,11 @@ body {
   margin: 0;
 }
 
-
-
 .container {
   position: relative; overflow: hidden;
   width: 1000px;
-  margin: 48px auto;
+  /*margin: 48px auto;*/
+  margin: 0;
 }
 
 .container img {
