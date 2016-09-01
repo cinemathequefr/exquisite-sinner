@@ -5,7 +5,7 @@ body {
 }
 
 .container {
-  position: relative;
+  position: relative; overflow: hidden;
   width: 100%;
   margin: 0; padding: 0 0 78.35% 0;
   background-image: url(../../img/exquisite-sinner-1200x940.jpg);
