@@ -4,7 +4,8 @@ $(window).on("load", function () {
   $(".shape").on("click", function () {
     $(".infobox.visible").attr("class", "infobox");
     window.setTimeout(function () {
-      $(".infobox").addClass("visible animated rubberBand");
+      // $(".infobox").addClass("visible animated rubberBand");
+      $(".infobox").addClass("visible animated bounceInUp");
     }, 100)
   });
 
