@@ -22,8 +22,7 @@ svg .shape {
   opacity: 0;
   cursor: pointer;
   transition: 0.75s;
-  /*mix-blend-mode: lighten;*/
-  mix-blend-mode: soft-light;
+  mix-blend-mode: hard-light;
 }
 
 svg .shape:hover, svg .shape.on {
