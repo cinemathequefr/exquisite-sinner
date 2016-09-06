@@ -21,14 +21,26 @@ body {
 svg .shape {
   opacity: 0;
   cursor: pointer;
-  transition: 0.25s;
-  /*fill: #f33;*/
-  mix-blend-mode: hard-light;
+  transition: 0.75s;
+  /*mix-blend-mode: lighten;*/
+  mix-blend-mode: soft-light;
 }
 
 svg .shape:hover, svg .shape.on {
+  transition: 0.25s;
   opacity: 1;
 }
+
+
+svg .shape.on {
+  mix-blend-mode: soft-light !important; 
+}
+
+svg .shape:hover {
+  mix-blend-mode: hard-light;
+}
+
+
 
 #shape1 { fill: #33f; }
 #shape2 { fill: #f33; }
@@ -37,21 +49,38 @@ svg .shape:hover, svg .shape.on {
 #shape5 { fill: #f3f; }
 
 
-.infobox {
+
+
+#viewer {
   opacity: 0;
   position: absolute;
   top: 15%;  left: 5%;
   border-radius: 12px;
   background-color: #fff;
-  -webkit-animation-duration: 0.65s !important;
-  animation-duration: 0.65s !important;
+  -webkit-animation-duration: 0.5s !important;
+  animation-duration: 0.5s !important;
 }
 
-.infobox.visible {
+#viewer.visible {
   top: 5%;  left: 5%; height: 35%; width: 60%;
   opacity: 1;
 }
 
-.infobox .content {
-  margin: 1.5%;
+.viewerContent {
+  margin: 12px 24px 12px 12px;
+}
+
+.viewerClose:before {
+  display: block; position: fixed;
+  top: 4px; right: 16px; line-height: 0.5;
+  color: #222;
+  font-size: 2.5rem; font-weight: 700;
+  content: "×";
+  opacity: 0.5;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.viewerClose:hover:before, .viewerClose.on:before {
+  opacity: 1;
 }

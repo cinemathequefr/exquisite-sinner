@@ -1,41 +1,40 @@
-
-
 $(window).on("load", function () {
-  $(".shape").on("click", function () {
-    $(".infobox.visible").attr("class", "infobox");
-    window.setTimeout(function () {
-      // $(".infobox").addClass("visible animated rubberBand");
-      $(".infobox").addClass("visible animated bounceInUp");
-    }, 100)
-  });
+
+  var $activeShape = $("");
+
+
+  var w = $("svg").eq(0).width();
+
+
+
+  viewer.init();
+
+
+  $(".shape").on("click", viewerTrigger);
+
+
+
+
+  function viewerTrigger () {
+    $activeShape.removeClass("on");
+    $activeShape = $(arguments[0].target);
+    $activeShape.addClass("on");
+
+
+    console.log($activeShape.offset().left);
+
+    function viewerOpen() {
+      viewer.content($activeShape.data("info"));
+      viewer.open();
+    }
+
+    if (viewer.isOpen() === true) {
+      viewer.close();
+      viewer.on("viewer.close", viewerOpen);
+    } else {
+      viewerOpen();
+    }
+
+  }
 
 });
-
-
-
-
-/*
-  $(".shape")
-  .on("mouseover", function () {
-    $(".infobox").addClass("visible");
-  })
-  .on("mouseout", function () {
-    $(".infobox").removeClass("visible");
-  });
-
-  $("body")
-  .on("mouseout", function () {
-    $(".shape").each(function (i) {
-      var $this = $(this);
-      window.setTimeout(function () {
-        $this.addClass("on");
-      }, (250 * i));
-      window.setTimeout(function () {
-        $this.removeClass("on");
-      }, (300 * (i + 1)));
-    });
-  })
-  .on("mousover", function () {
-    $(".shape").removeClass("on");
-  });
-*/
