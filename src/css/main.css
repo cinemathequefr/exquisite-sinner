@@ -21,32 +21,31 @@ body {
 svg .shape {
   opacity: 0;
   cursor: pointer;
-  transition: 0.75s;
-  mix-blend-mode: hard-light;
+  transition: 0.5s;
+  /*mix-blend-mode: soft-light;*/
+  mix-blend-mode: soft-light;
 }
-
-svg .shape:hover, svg .shape.on {
-  transition: 0.25s;
-  opacity: 1;
-}
-
 
 svg .shape.on {
-  mix-blend-mode: soft-light !important; 
+  opacity: 1;
+  mix-blend-mode: hard-light !important; 
 }
 
 svg .shape:hover {
-  mix-blend-mode: hard-light;
+  opacity: 1;
+  mix-blend-mode: soft-light;
 }
 
 
-
+/*
 #shape1 { fill: #33f; }
 #shape2 { fill: #f33; }
 #shape3 { fill: #3ff; }
 #shape4 { fill: #3f3; }
 #shape5 { fill: #f3f; }
-
+*/
+.shape { fill: #f90; }
+.shape { fill: #bf7f30; }
 
 
 
@@ -56,8 +55,8 @@ svg .shape:hover {
   top: 15%;  left: 5%;
   border-radius: 12px;
   background-color: #fff;
-  -webkit-animation-duration: 0.5s !important;
-  animation-duration: 0.5s !important;
+  -webkit-animation-duration: 0.35s !important;
+  animation-duration: 0.35s !important;
 }
 
 #viewer.visible {
