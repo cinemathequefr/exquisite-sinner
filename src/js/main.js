@@ -6,7 +6,14 @@ $(window).on("load", function () {
   viewer.init();
 
   $(".shape").on("click", function () {
-    queue.push($(arguments[0].target));
+
+    if (($shape || $("")).is($(arguments[0].target)) === false) {
+      queue.push($(arguments[0].target));
+    } else {
+      $shape.removeClass("on");
+      $shape = null;
+    }
+
     viewer.close(); // The only action here is to close the viewer (be it opened or not) -- the event handler will take care of opening the shape in queue
   });
 
@@ -17,10 +24,16 @@ $(window).on("load", function () {
       $shape = queue.pop();
       $shape.addClass("on");
 
+      $("#viewer").css({ "left": ($shape.data("pos") + "%") });
+
       viewer
       .content($shape.data("info"))
       .open();
     }
   });
+
+
+
+
 
 });

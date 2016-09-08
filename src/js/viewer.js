@@ -13,9 +13,10 @@ var viewer = (function () {
       return;
     }
 
-    $viewer.append("<div class='viewerContent'></div><div class='viewerClose'></div>");
+    // $viewer.append("<div class='viewerContent'></div><div class='viewerClose'></div>");
+    $viewer.append("<div class='viewerContent'></div>");
     $viewerContent = $viewer.children(".viewerContent");
-    $viewerClose = $viewer.children(".viewerClose");
+    // $viewerClose = $viewer.children(".viewerClose");
     $viewer.perfectScrollbar({
       suppressScrollX: true,
       wheelSpeed: 3
@@ -33,10 +34,15 @@ var viewer = (function () {
       $viewer
       .removeClass("fadeOutRight")
       .addClass("visible animated fadeInUp")
+      .scrollTop(0).perfectScrollbar("update")
       .one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function () {
         isOpen = true;
         $.publish("viewer.open");
-        $viewerClose.one("click", close);
+
+
+
+
+        // $viewerClose.one("click", close);
       });
     }
     return this;
