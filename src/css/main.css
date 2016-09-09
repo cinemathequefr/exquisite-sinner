@@ -18,7 +18,7 @@ body {
   position: absolute;
   left: 0; top: 0; bottom: 0; right: 0;
 }
-
+/*
 svg .shape {
   opacity: 0;
   cursor: pointer;
@@ -35,24 +35,32 @@ svg .shape:hover {
   opacity: 1;
   mix-blend-mode: soft-light;
 }
-
-
-/*
-#shape1 { fill: #33f; }
-#shape2 { fill: #f33; }
-#shape3 { fill: #3ff; }
-#shape4 { fill: #3f3; }
-#shape5 { fill: #f3f; }
 */
-.shape { fill: #f90; }
-.shape { fill: #bf7f30; }
+
+svg .shape {
+  opacity: 0;
+  cursor: pointer;
+  transition: 0.5s;
+  mix-blend-mode: hard-light;
+  /*fill: #d96c00;*/
+  fill: #d96c00;
+}
+
+svg .shape.on {
+  opacity: 1 !important;
+}
+
+svg .shape:hover {
+  opacity: 0.65;
+  transition: 0.25s;
+}
+
 
 #viewer {
   position: absolute; overflow: hidden;
   top: 5%;  left: 5%; height: 35%; width: 60%;
   margin: 0;
-  border-radius: 4px;
-  padding: 36px 24px 12px 24px;
+  border-radius: 6px; box-shadow: 1px 1px 4px 0px rgba(64, 64, 64, 0.5);
   background-color: #fff;
   -webkit-animation-duration: 0.35s !important;
   animation-duration: 0.35s !important;
@@ -67,7 +75,7 @@ svg .shape:hover {
 
 .viewerContent {
   position: relative;
-  margin: 0; padding: 0;
+  margin: 0; padding: 24px 24px 12px 24px;
 }
 
 .viewerContent p {
@@ -75,23 +83,6 @@ svg .shape:hover {
   color: #222;
 }
 
-/*
-.viewerClose:before {
-  display: block; position: fixed;
-  top: 4px; right: 16px; line-height: 0.5;
-  color: #222;
-  font-size: 2.5rem; font-weight: 700;
-  content: "×";
-  opacity: 0.5;
-  cursor: pointer;
-  transition: 0.25s;
-}
-
-.viewerClose:hover:before, .viewerClose.on:before {
-  opacity: 1;
-}
-
-*/
 .viewerContent .name {
   font-size: 1.125rem;
   font-weight: 700;

@@ -5,7 +5,12 @@ $(window).on("load", function () {
 
   viewer.init();
 
-  $(".shape").on("click", function () {
+  $("svg").on("click", function () { // Click anywhere in the svg (unless it's a shape -- see below)
+    viewer.close();
+  });
+
+
+  $(".shape").on("click", function (e) {
 
     if (($shape || $("")).is($(arguments[0].target)) === false) {
       queue.push($(arguments[0].target));
@@ -15,7 +20,11 @@ $(window).on("load", function () {
     }
 
     viewer.close(); // The only action here is to close the viewer (be it opened or not) -- the event handler will take care of opening the shape in queue
+    e.stopPropagation();
   });
+
+
+
 
   viewer.on("viewer.close", function () {
     ($shape || $("")).removeClass("on");
