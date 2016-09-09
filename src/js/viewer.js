@@ -38,10 +38,6 @@ var viewer = (function () {
       .one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function () {
         isOpen = true;
         $.publish("viewer.open");
-
-
-
-
         // $viewerClose.one("click", close);
       });
     }

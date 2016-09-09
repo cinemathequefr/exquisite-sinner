@@ -55,6 +55,11 @@ svg .shape:hover {
   transition: 0.25s;
 }
 
+svg .shape.hover {
+  opacity: 1;
+  transition: 0.5s;
+}
+
 
 #viewer {
   position: absolute; overflow: hidden;

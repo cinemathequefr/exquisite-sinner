@@ -1,7 +1,7 @@
 $(window).on("load", function () {
   var queue = []; // A queue of the shape(s) _to be opened_
   var $shape = null;
-  // var w = $("svg").eq(0).width();
+  var t;
 
   viewer.init();
 
@@ -11,7 +11,7 @@ $(window).on("load", function () {
 
 
   $(".shape").on("click", function (e) {
-
+    window.clearTimeout(t);
     if (($shape || $("")).is($(arguments[0].target)) === false) {
       queue.push($(arguments[0].target));
     } else {
@@ -22,9 +22,6 @@ $(window).on("load", function () {
     viewer.close(); // The only action here is to close the viewer (be it opened or not) -- the event handler will take care of opening the shape in queue
     e.stopPropagation();
   });
-
-
-
 
   viewer.on("viewer.close", function () {
     ($shape || $("")).removeClass("on");
@@ -40,6 +37,18 @@ $(window).on("load", function () {
       .open();
     }
   });
+
+  t = window.setTimeout(function () { // Autoplay hint
+    $(".shape").each(function (i) {
+      var $shape = $(this);
+      window.setTimeout(function () {
+        $shape.addClass("hover");
+        window.setTimeout(function () {
+          $shape.removeClass("hover");
+      }, 350);
+      }, (5 - i) * 350);
+    });
+  }, 1000);
 
 
 
