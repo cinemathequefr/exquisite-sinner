@@ -1,3 +1,19 @@
+
+/*
+@font-face {
+  font-family: "FontAwesome";
+  src:
+    url("http://www.cinematheque.fr/fonts/fontawesome-webfont.eot?#iefix&v=4.3.0") format("embedded-opentype"),
+    url("http://www.cinematheque.fr/fonts/fontawesome-webfont.woff2?v=4.3.0") format("woff2"),
+    url("http://www.cinematheque.fr/fonts/fontawesome-webfont.woff?v=4.3.0") format("woff"),
+    url("http://www.cinematheque.fr/fonts/fontawesome-webfont.ttf?v=4.3.0") format("truetype"),
+    url("http://www.cinematheque.fr/fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular") format("svg");
+  font-weight: normal;
+  font-style: normal
+}
+*/
+
+
 body {
   position: relative;
   margin: 0;
@@ -14,10 +30,11 @@ body {
   background-size: cover;
 }
 
-.container svg {
+svg {
   position: absolute;
   left: 0; top: 0; bottom: 0; right: 0;
 }
+
 /*
 svg .shape {
   opacity: 0;
@@ -36,6 +53,12 @@ svg .shape:hover {
   mix-blend-mode: soft-light;
 }
 */
+/*
+.container:hover .shape {
+  opacity: 0.25;
+  transition: 0.25s;
+}
+*/
 
 svg .shape {
   opacity: 0;
@@ -51,13 +74,12 @@ svg .shape.on {
 }
 
 svg .shape:hover {
-  opacity: 0.65;
+  opacity: 0.5;
   transition: 0.25s;
 }
 
 svg .shape.hover {
-  opacity: 1;
-  transition: 0.5s;
+  opacity: 0.85;
 }
 
 
@@ -101,4 +123,28 @@ svg .shape.hover {
 
 .viewerContent .caption {
   font-size: 0.75rem; color: #444;
+}
+
+#ctrl-zoom {
+  position: absolute; text-align: center;
+  top: 2px; right: 2px;
+  padding: 0; margin: 0;
+  width: 48px; height: 48px; line-height: 48px;
+  background-color: #bf7f30; color: #eee;
+  font-size: 1.5rem;
+  cursor: pointer; opacity: 0; transition: 0.35s;
+}
+
+
+#ctrl-zoom:before {
+  content: "\f002";
+  font-family: FontAwesome;
+}
+
+#ctrl-zoom:hover {
+  background-color: #a66619;
+}
+
+.container:hover #ctrl-zoom {
+  opacity: 1;
 }

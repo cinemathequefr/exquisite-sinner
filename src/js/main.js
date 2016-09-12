@@ -46,12 +46,8 @@ $(window).on("load", function () {
         window.setTimeout(function () {
           $shape.removeClass("hover");
       }, 350);
-      }, (5 - i) * 350);
+      }, (5 - i) * 700);
     });
-  }, 1000);
-
-
-
-
+  }, 500);
 
 });
