@@ -12,11 +12,8 @@ var viewer = (function () {
       console.error("Initialization failed: a #viewer element must be present and unique");
       return;
     }
-
-    // $viewer.append("<div class='viewerContent'></div><div class='viewerClose'></div>");
     $viewer.append("<div class='viewerContent'></div>");
     $viewerContent = $viewer.children(".viewerContent");
-    // $viewerClose = $viewer.children(".viewerClose");
     $viewer.perfectScrollbar({
       suppressScrollX: true,
       wheelSpeed: 3

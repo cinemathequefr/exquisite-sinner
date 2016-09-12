@@ -9,9 +9,8 @@ $(window).on("load", function () {
     viewer.close();
   });
 
-
   $(".shape").on("click", function (e) {
-    // window.clearTimeout(t);
+
     if (($shape || $("")).is($(arguments[0].target)) === false) {
       queue.push($(arguments[0].target));
     } else {
@@ -29,9 +28,7 @@ $(window).on("load", function () {
     if (queue.length > 0) {
       $shape = queue.pop();
       $shape.addClass("on");
-
       $("#viewer").css({ "left": ($shape.data("pos") + "%") });
-
       viewer
       .content($shape.data("info"))
       .open();
@@ -41,17 +38,5 @@ $(window).on("load", function () {
   window.setTimeout(function () {
     $(".shape").eq(0).trigger("click");
   }, 1000);
-
-  // t = window.setTimeout(function () { // Autoplay hint
-  //   $(".shape").each(function (i) {
-  //     var $shape = $(this);
-  //     window.setTimeout(function () {
-  //       $shape.addClass("hover");
-  //       window.setTimeout(function () {
-  //         $shape.removeClass("hover");
-  //     }, 350);
-  //     }, (5 - i) * 700);
-  //   });
-  // }, 500);
 
 });
