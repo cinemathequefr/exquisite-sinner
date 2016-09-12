@@ -11,7 +11,7 @@ $(window).on("load", function () {
 
 
   $(".shape").on("click", function (e) {
-    window.clearTimeout(t);
+    // window.clearTimeout(t);
     if (($shape || $("")).is($(arguments[0].target)) === false) {
       queue.push($(arguments[0].target));
     } else {
@@ -38,16 +38,20 @@ $(window).on("load", function () {
     }
   });
 
-  t = window.setTimeout(function () { // Autoplay hint
-    $(".shape").each(function (i) {
-      var $shape = $(this);
-      window.setTimeout(function () {
-        $shape.addClass("hover");
-        window.setTimeout(function () {
-          $shape.removeClass("hover");
-      }, 350);
-      }, (5 - i) * 700);
-    });
-  }, 500);
+  window.setTimeout(function () {
+    $(".shape").eq(0).trigger("click");
+  }, 1000);
+
+  // t = window.setTimeout(function () { // Autoplay hint
+  //   $(".shape").each(function (i) {
+  //     var $shape = $(this);
+  //     window.setTimeout(function () {
+  //       $shape.addClass("hover");
+  //       window.setTimeout(function () {
+  //         $shape.removeClass("hover");
+  //     }, 350);
+  //     }, (5 - i) * 700);
+  //   });
+  // }, 500);
 
 });
