@@ -125,6 +125,7 @@ svg .shape.hover {
   font-size: 0.75rem; color: #444;
 }
 
+/*
 #ctrl-zoom {
   position: absolute; text-align: center;
   top: 2px; right: 2px;
@@ -148,3 +149,4 @@ svg .shape.hover {
 .container:hover #ctrl-zoom {
   opacity: 1;
 }
+*/
